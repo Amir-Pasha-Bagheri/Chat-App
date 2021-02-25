@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="client.js"></script>
+    
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+        width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #666; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+
+        <div class="row">
+            
+            <!--Header-->
+            <div class="col-12 bg-primary text-center" style="height: 50px;">
+                <h5 style="margin-top: 11px;" class="text-light font-weight-bold">Chat App</h5>
+            </div>
+
+            <!--Room Details-->
+            <div class="col-4 alert-primary" style="height: 600px;">
+                <p class="my-3" style="font-size: 23px;">Members :</p><hr/>
+
+                <ul style="font-size: 20px; list-style-type: none;">
+                    <li>Amir Pasha<hr/></li>
+                    <li>Makaila<hr/></li>
+                    <li>Sofie<hr/></li>
+                </ul>
+
+            </div>
+
+            <!--Chat-->
+            <div class="col-8 bg-light">
+
+                <div style="position: relative; height: 542px; overflow-y: scroll;">
+
+                    <!--Group Name-->
+                    <p class="mb-1 mx-1 py-1 bg-info sticky-top text-white" style="text-align: center; height: 40px; font-size: 20px;">Name</p>
+                    <!--Group Name-->
+
+                    <!--Join Or Left Alert-->
+                    <p class="my-2 rounded w-50 mx-auto" style="text-align: center; background-color: rgb(207, 196, 196);">Someone Joined The Chat !</p>
+                    <p class="my-2 rounded w-50 mx-auto" style="text-align: center; background-color: rgb(207, 196, 196);">Someone Left The Chat !</p>
+                    <!--Join Or Left Alert-->
+
+                    <!--Chat Message-->
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Amir Pasha <small><i>15:05</i></small></b>
+                        <br/>hello
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Makaila <small><i>15:05</i></small></b>
+                        <br/>how are you
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Sofie <small><i>15:05</i></small></b>
+                        <br/>happy new year
+                    </p>
+
+
+                    
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Amir Pasha <small><i>15:05</i></small></b>
+                        <br/>hello
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Makaila <small><i>15:05</i></small></b>
+                        <br/>how are you
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Sofie <small><i>15:05</i></small></b>
+                        <br/>happy new year
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Amir Pasha <small><i>15:05</i></small></b>
+                        <br/>hello
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Makaila <small><i>15:05</i></small></b>
+                        <br/>how are you
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Sofie <small><i>15:05</i></small></b>
+                        <br/>happy new year
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Amir Pasha <small><i>15:05</i></small></b>
+                        <br/>hello
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Makaila <small><i>15:05</i></small></b>
+                        <br/>how are you
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Sofie <small><i>15:05</i></small></b>
+                        <br/>happy new year
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Amir Pasha <small><i>15:05</i></small></b>
+                        <br/>hello
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Makaila <small><i>15:05</i></small></b>
+                        <br/>how are you
+                    </p>
+                    <p class="my-2 mx-4 px-3 py-1 rounded-right bg-white border border-secondary" style="word-wrap: break-word;">
+                        <b class="alert-primary rounded px-1">Sofie <small><i>15:05</i></small></b>
+                        <br/>happy new year
+                    </p>
+                    <!--Chat Message-->
+                </div>
+
+                <form id="form" class="input-group clear-top fixed-bottom pb-1 bg-light w-90" style="position: absolute; height: 58px;">
+                    <input type="text" id="Message" name="message box" class="form-control" style="height: 58px;" placeholder="Enter Message...">
+                    <div class="input-append">
+                        <input type="submit" value="Send" class="btn btn-primary" style="height: 58px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
