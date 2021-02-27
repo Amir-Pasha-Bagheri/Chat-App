@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat App</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script defer src="https://cdnjs.cloudflare.com/ajax/libs/qs/6.9.6/qs.min.js" integrity="sha512-3TmPrquYLaAsUmZKXRARTDC5siWhLAdBVqNo4dWpDABBtLU62AaoTaQJEvjxjExcZYurO6i1dnK85k8pPIBlRg==" crossorigin="anonymous"></script>
+    <script defer src="socket.io/socket.io.js"></script>
+    <script defer src="client.js"></script>
+
+    <style>
+        /* width */
+        ::-webkit-scrollbar {
+        width: 5px;
+        }
+
+        /* Track */
+        ::-webkit-scrollbar-track {
+        background: #f1f1f1; 
+        }
+        
+        /* Handle */
+        ::-webkit-scrollbar-thumb {
+        background: #888; 
+        }
+
+        /* Handle on hover */
+        ::-webkit-scrollbar-thumb:hover {
+        background: #666; 
+        }
+    </style>
+</head>
+<body>
+    <div class="container my-4">
+
+        <div class="row">
+            
+            <!--Header-->
+            <div class="col-12 bg-primary text-center rounded" style="height: 50px;">
+                <h5 style="margin-top: 11px;" class="text-light font-weight-bold">Chat App</h5>
+            </div>
+
+            <!--Room Details-->
+            <div class="col-4 alert-primary" style="height: 600px;">
+                
+                <p class="my-3" style="font-size: 23px;">Members :</p><hr/>
+
+                <ul id='member-list' style="font-size: 20px; list-style-type: none;"></ul>
+
+            </div>
+
+            <!--Chat-->
+            <div class="col-8 bg-light">
+
+                <div id="message-container" style="position: relative; height: 542px; overflow-y: scroll;">
+
+                    <!--Group Name-->
+                    <p class="mb-1 mx-1 py-1 bg-info sticky-top text-white" style="text-align: center; height: 40px; font-size: 20px;">Name</p>
+                    <!--Group Name-->
+
+                    <!--Join Or Left Alert-->
+                    
+                    <!--Join Or Left Alert-->
+
+                    <!--Chat Message-->
+                    
+                    <!--Chat Message-->
+                </div>
+
+                <form id="form" class="input-group clear-top fixed-bottom pb-1 bg-light w-90" style="position: absolute; height: 58px;">
+                    <input type="text" id="Message" name="message box" class="form-control" style="height: 58px;" placeholder="Enter Message..." required autocomplete="off">
+                    <div class="input-append">
+                        <input id="submit" type="submit" value="Send" class="btn btn-primary" style="height: 58px;">
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
