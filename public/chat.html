@@ -33,6 +33,30 @@
         ::-webkit-scrollbar-thumb:hover {
         background: #666; 
         }
+        @keyframes example {
+        0%   {height: 0px;}
+        10%  {height: 10px;}
+        20%  {height: 20px;}
+        30%  {height: 30px;}
+        40%  {height: 40px;}
+        50%  {height: 50px;}
+        70%  {height: 60px;}
+        85%  {height: 70px;}
+        100%  {height: 80px;}
+        }
+        #emoji{
+        box-sizing: content-box;
+        user-select: none;
+        text-align: center;
+        cursor: pointer;
+        width: 30px;
+        font-size: 21px;
+        padding: 2px;
+        margin: 2px;
+        background-color: transparent;
+        transform: scale(0.9);
+        float: left;
+        }
     </style>
 </head>
 <body>
@@ -72,8 +96,69 @@
                     <!--Chat Message-->
                 </div>
 
+                <div id="emoji-container" class="w-100 bg-white" style="margin-top: -87px;margin-left: -10px;height: 87px; display: none;overflow-y: scroll;position: relative;">
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128512;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128513;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128514;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128515;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128516;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128517;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128518;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128519;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128520;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128521;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128522;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128523;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128524;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128525;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128526;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128527;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128528;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128529;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128530;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128531;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128532;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128533;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128534;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128535;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128536;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128537;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128538;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128539;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128540;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128541;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128542;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128543;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128544;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128545;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128546;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128547;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128548;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128549;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128550;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128551;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128552;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128553;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128554;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128555;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128556;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128557;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128558;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128559;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128560;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128561;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128562;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128563;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128564;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128565;</span></div>
+                    <div id="emoji"><span onclick="emoji(this.innerHTML)">&#128566;</span></div>
+                </div>
+
                 <form id="form" class="input-group clear-top fixed-bottom pb-1 bg-light w-90" style="position: absolute; height: 58px;">
                     <input type="text" id="Message" name="message box" class="form-control" style="height: 58px;" placeholder="Enter Message..." required autocomplete="off">
+                    <div class="input-append">
+                        <input id="emoji-input" type="button" value="&#128512;" class="btn btn-light" style="height: 58px;" onclick="stickerMenu()">
+                    </div>
                     <div class="input-append">
                         <input id="submit" type="submit" value="Send" class="btn btn-primary" style="height: 58px;">
                     </div>

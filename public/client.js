@@ -79,3 +79,17 @@ socket.on('Pass-Array-Remove',membersdata=>{
     const mapMembers = membersdata.map(user=>`<li>${user}</li>`)
     memberList.innerHTML = mapMembers.join('<hr/>')
 })
+
+//Emojis
+const div = document.getElementById('emoji-container')
+function stickerMenu(){
+    if(div.style.display === 'block'){
+        div.style.display = 'none'
+    }
+    else div.style.display = 'block'
+}
+
+function emoji(emoji){
+    const textarea = document.getElementById('Message').value
+    document.getElementById('Message').value = textarea + emoji
+}
