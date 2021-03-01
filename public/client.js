@@ -1,11 +1,20 @@
 const socket = io()
 const sendMessage = document.getElementById('submit')
 const scrollDown = document.getElementById('message-container')
+const input = document.getElementById('Message')
+
+input.onfocus = function(){
+    if(div.style.display === 'block'){
+        div.style.display = 'none'
+    }
+}
 
 //Getting Name From Query
-const username = Qs.parse(location.search,{
+const Query = Qs.parse(location.search,{
     ignoreQueryPrefix : true
 })
+
+document.getElementById('room-name').innerHTML = Query.room
 
 function createBotMessage (data){
     const div = document.createElement('div')
@@ -20,7 +29,6 @@ function createUsersMessage (obj){
     <b class="alert-primary rounded px-1">${obj.username} <small><i>${obj.time}</i></small></b>
     <br/>${obj.text}</p>`
     document.getElementById('message-container').appendChild(div)
-    console.log(obj);
 }
 
 function createYourMessage (obj){
@@ -44,14 +52,17 @@ sendMessage.addEventListener('click',(e)=>{
     e.preventDefault()
     const message = document.getElementById('Message').value
     if(message!==''){
-    socket.emit('Message',username , message)
+    socket.emit('Message', message)
     document.getElementById('Message').value = ''
     }
     else false
 })
 
+//Room Join
+socket.emit('Join',Query)
+
 //User Join or Left
-socket.emit('Bot',username)
+socket.emit('Bot',Query)
 
 //Showing Message From Server
 socket.on('Users-Message',data=>{
@@ -64,19 +75,11 @@ socket.on('Your-Message',data=>{
     scrollDown.scrollTop = scrollDown.scrollHeight
 })
 
-//Add To Members
+//Members Info
 const memberList = document.getElementById('member-list')
 
-socket.emit('Add-Member',username)
-socket.on('Pass-Array-Add',membersdata=>{
-    const mapMembers = membersdata.map(user=>`<li>${user}</li>`)
-    memberList.innerHTML = mapMembers.join('<hr/>')
-})
-
-//Remove From Members
-socket.emit('Remove-Member',username)
-socket.on('Pass-Array-Remove',membersdata=>{
-    const mapMembers = membersdata.map(user=>`<li>${user}</li>`)
+socket.on('Pass-Array',membersdata=>{
+    const mapMembers = membersdata.map(user=>`<li>${user.username}</li>`)
     memberList.innerHTML = mapMembers.join('<hr/>')
 })
 

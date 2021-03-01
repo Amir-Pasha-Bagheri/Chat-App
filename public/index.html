@@ -19,9 +19,20 @@
                 <h5 style="padding-top: 12px;" class="text-light font-weight-bold">Chat App</h5>
             </div>
             <!--Information-->
-            <div style="height: 150px;">
+            <div style="height: 250px;">
                 <form action="chat.html" class="text-center">
                     <input class="form-control w-50 mx-auto mt-4" type="text" autocomplete="off" name="username" placeholder="Enter Your Name..." required/>
+
+                    <div class="form-group w-50 mx-auto mt-4">
+                        <label for="room">Select Room :</label>
+                        <select class="form-control" id="room" name="room">
+                          <option>First Room</option>
+                          <option>Second Room</option>
+                          <option>Third Room</option>
+                          <option>Fourth Room</option>
+                        </select>
+                      </div>
+
                     <input class="btn btn-primary w-50 my-5" type="submit" value="Join The Chat">
                 </form>
             </div>
